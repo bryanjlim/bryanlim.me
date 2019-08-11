@@ -5,10 +5,10 @@ module.exports = {
     title: 'Bryan Lim',
     description: 'Personal Website for Bryan Lim',
     keywords: 'gatsbyjs, gatsby, javascript, sample, something',
-    siteUrl: 'https://bryanjlim.github.io',
+    siteUrl: 'bryanlim.me',
     author: {
       name: 'Bryan Lim',
-      url: 'https://bryanjlim/github.io',
+      url: 'bryanlim.me',
       email: 'bryanjlim@outlook.com'
     }
   },
