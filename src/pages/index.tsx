@@ -79,7 +79,7 @@ const IndexPage = () => (
           marginTop="3em"
           marginLeft="auto"
           marginRight="auto"
-          width={1 / 3}
+          width={[1 / 2, 1 / 3]}
           backgroundColor="lavender"
           padding="1em"
           sx={{ borderRadius: '2em' }}
