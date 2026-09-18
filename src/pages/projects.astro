@@ -11,13 +11,13 @@ const calculators = [
     slug: 'buy-or-rent-california',
     name: 'California Buy vs Rent Calculator',
     what: 'Buy-vs-rent tuned for California taxes and housing costs.',
-    why: 'California taxes and housing costs are weird enough to deserve their own version.',
+    why: 'California has weird rules like Prop 13 and rent control that national calculators ignore. I wanted a version that accounts for them.',
   },
   {
     slug: 'job-offer-comparison',
     name: 'Job Offer Comparison Calculator',
     what: 'Compares offers on total comp, vesting, and taxes, not just salary.',
-    why: 'Comparing offers on salary alone is wrong, and I have opinions about equity.',
+    why: 'I built the first version in 2021 to compare my own job offers on cost of living and taxes, not just salary.',
   },
   {
     slug: 'fire',
@@ -42,7 +42,7 @@ const calculators = [
         <span class="tag">Website creator · 2023 – present</span>
       </div>
       <p>Bank, credit-card, and brokerage bonus comparison platform. I built the entire thing end to end: a SvelteKit site on Cloudflare Workers (D1), a Payload CMS backend, an automated data pipeline for offer intake and processing, with an LLM-agent stage that continuously re-verifies every offer against banks' live pages.</p>
-      <p class="why"><b>Why:</b> bank bonuses are free money that most people leave on the table because comparing them is tedious. I wanted to automate the tedious part.</p>
+      <p class="why"><b>Why:</b> most people have no idea how many bank bonuses are out there. I wanted to make them easy to find.</p>
       <div class="stats">
         <div class="stat"><b>50K+</b><span>monthly visitors</span></div>
         <div class="stat"><b>208K</b><span>monthly pageviews (peak)</span></div>
@@ -79,14 +79,14 @@ const calculators = [
         <span class="tag">UW · 2022</span>
       </div>
       <p>A card game about outsmarting others with trades and investments that makes finance fun. It was designed to teach market and personal-finance basics to players 12 and up. Built with fellow UW students; I worked on the Next.js site with the how-to-play guide and ordering.</p>
-      <p class="why"><b>Why:</b> making finance fun enough that a 12-year-old plays it voluntarily, and shipping a physical product instead of just code.</p>
+      <p class="why"><b>Why:</b> we wanted a fun game that would get people interested in finance and financial literacy.</p>
     </div>
     <div class="card">
       <div class="card-head">
         <h3><a href="https://tallydiary.com" rel="noopener">Tally Diary</a></h3>
       </div>
       <p>Diary app with 5,000+ users across iOS, Android, Windows, and Web. It's a React PWA storing diaries in personal cloud storage under password protection.</p>
-      <p class="why"><b>Why:</b> I wanted a diary that lived everywhere I do, without handing my entries to a company.</p>
+      <p class="why"><b>Why:</b> I wanted a diary that kept everything in your own Google Drive and included the paywalled features of other diary apps for free.</p>
     </div>
     <div class="card">
       <a class="shot-link" href="#lb-triangul8"><img class="shot" src="/images/triangul8-game.png" alt="Triangul8 mobile gameplay" loading="lazy" /></a>
@@ -94,7 +94,7 @@ const calculators = [
         <h3>Triangul8</h3>
       </div>
       <p>A physical board game of triangular bakelite tiles. I worked on the Unity port that brought it to iOS and Android. <a href="https://www.geekwire.com/2017/triangul8/" rel="noopener">Featured by GeekWire</a> as a modern-day "chess killer."</p>
-      <p class="why"><b>Why:</b> taking a real, tactile game and making it sing on a touchscreen.</p>
+      <p class="why"><b>Why:</b> Triangul8 was a modern, strategic board game as simple as checkers. I thought it was cool to make it more accessible as a video game.</p>
     </div>
   </section>
   <div class="lightbox" id="lb-noncents-team">
