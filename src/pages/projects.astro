@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Projects by Bryan Lim';
+const description = 'Things Bryan Lim has built, and why: bankrewards.io, favorite finance calculators, Noncents, Tally Diary, Triangul8.';
+
+const site = 'https://bankrewards.io/blog/calculator';
+
+const calculators = [
+  {
+    slug: 'buy-or-rent-california',
+    name: 'California Buy vs Rent Calculator',
+    what: 'Buy-vs-rent tuned for California taxes and housing costs.',
+    why: 'California taxes and housing costs are weird enough to deserve their own version.',
+  },
+  {
+    slug: 'job-offer-comparison',
+    name: 'Job Offer Comparison Calculator',
+    what: 'Compares offers on total comp, vesting, and taxes, not just salary.',
+    why: 'Comparing offers on salary alone is wrong, and I have opinions about equity.',
+  },
+  {
+    slug: 'fire',
+    name: 'FIRE Calculator',
+    what: 'Projects your path to financial independence / retiring early.',
+    why: 'I wanted to play with the math of financial independence myself.',
+  },
+];
+---
+
+<Layout title={title} description={description}>
+  <header class="page-head">
+    <h1>Projects</h1>
+    <p>Things I've built, and the reasoning behind each one.</p>
+  </header>
+
+  <section>
+    <h2>The platform</h2>
+    <div class="card featured">
+      <div class="card-head">
+        <h3><a href="https://bankrewards.io" rel="noopener">bankrewards.io</a></h3>
+        <span class="tag">Website creator · 2023 – present</span>
+      </div>
+      <p>Bank, credit-card, and brokerage bonus comparison platform. I built the entire thing end to end: a SvelteKit site on Cloudflare Workers (D1), a Payload CMS backend, an LLM-agent pipeline that continuously re-verifies every offer against banks' live pages, and a Discord bot for offer intake and weekly review.</p>
+      <p class="why"><b>Why:</b> bank bonuses are free money that most people leave on the table because comparing them is tedious. I wanted to automate the tedious part.</p>
+      <div class="stats">
+        <div class="stat"><b>54K</b><span>monthly visitors (peak)</span></div>
+        <div class="stat"><b>208K</b><span>monthly pageviews (peak)</span></div>
+        <div class="stat"><b>~162K</b><span>new users, May–Sep 2026</span></div>
+        <div class="stat"><b>$7.3K</b><span>referral revenue, one advertiser</span></div>
+      </div>
+      <p class="stack"><code>TypeScript</code><code>SvelteKit</code><code>Cloudflare Workers / D1</code><code>Payload CMS</code><code>Playwright</code><code>PostHog</code></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Finance calculators</h2>
+    <p style="color: var(--muted); margin-bottom: 1.25rem; font-size: 0.98rem;">My favorites from bankrewards.io. The ones I'd actually send to a friend.</p>
+    <div class="calc-grid">
+      {calculators.map((c) => (
+        <div class="calc-card">
+          <h3>{c.name}</h3>
+          <p>{c.what}</p>
+          <p class="why">Why: {c.why}</p>
+          <a class="more" href={`${site}/${c.slug}`} rel="noopener">Try it →</a>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <h2>Apps &amp; games</h2>
+    <div class="card">
+      <div class="shots">
+        <a class="shot-link" href="#lb-noncents-team"><img src="/images/noncents-team.png" alt="The Noncents team playtesting the game" loading="lazy" /></a>
+        <a class="shot-link" href="#lb-noncents-events"><img src="/images/noncents-events.png" alt="Noncents event deck cards fanned out on a table" loading="lazy" /></a>
+      </div>
+      <div class="card-head">
+        <h3><a href="https://noncents.games" rel="noopener">Noncents</a></h3>
+        <span class="tag">UW · 2022</span>
+      </div>
+      <p>A card game about outsmarting others with trades and investments that makes finance fun. It was designed to teach market and personal-finance basics to players 12 and up. Built with fellow UW students; I worked on the Next.js site with the how-to-play guide and ordering.</p>
+      <p class="why"><b>Why:</b> making finance fun enough that a 12-year-old plays it voluntarily, and shipping a physical product instead of just code.</p>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <h3><a href="https://tallydiary.com" rel="noopener">Tally Diary</a></h3>
+      </div>
+      <p>Diary app with 5,000+ users across iOS, Android, Windows, and Web. It's a React PWA storing diaries in personal cloud storage under password protection.</p>
+      <p class="why"><b>Why:</b> I wanted a diary that lived everywhere I do, without handing my entries to a company.</p>
+    </div>
+    <div class="card">
+      <a class="shot-link" href="#lb-triangul8"><img class="shot" src="/images/triangul8-game.png" alt="Triangul8 mobile gameplay" loading="lazy" /></a>
+      <div class="card-head">
+        <h3>Triangul8</h3>
+      </div>
+      <p>A physical board game of triangular bakelite tiles. I worked on the Unity port that brought it to iOS and Android. <a href="https://www.geekwire.com/2017/triangul8/" rel="noopener">Featured by GeekWire</a> as a modern-day "chess killer."</p>
+      <p class="why"><b>Why:</b> taking a real, tactile game and making it sing on a touchscreen.</p>
+    </div>
+  </section>
+  <div class="lightbox" id="lb-noncents-team">
+    <a class="lightbox-bg" href="#!" aria-label="Close"></a>
+    <img src="/images/noncents-team.png" alt="The Noncents team playtesting the game" />
+    <a class="lightbox-close" href="#!" aria-label="Close">&times;</a>
+  </div>
+  <div class="lightbox" id="lb-noncents-events">
+    <a class="lightbox-bg" href="#!" aria-label="Close"></a>
+    <img src="/images/noncents-events.png" alt="Noncents event deck cards fanned out on a table" />
+    <a class="lightbox-close" href="#!" aria-label="Close">&times;</a>
+  </div>
+  <div class="lightbox" id="lb-triangul8">
+    <a class="lightbox-bg" href="#!" aria-label="Close"></a>
+    <img src="/images/triangul8-game.png" alt="Triangul8 mobile gameplay" />
+    <a class="lightbox-close" href="#!" aria-label="Close">&times;</a>
+  </div>
+</Layout>
