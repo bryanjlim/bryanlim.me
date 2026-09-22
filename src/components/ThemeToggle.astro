@@ -1,0 +1,36 @@
+<button class="theme-toggle" type="button" hidden aria-label="Switch color theme">
+<svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+<circle cx="12" cy="12" r="4"/>
+<path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/>
+</svg>
+<svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true">
+<path d="M20.5 13.2A8.5 8.5 0 0 1 10.8 3.5a8.5 8.5 0 1 0 9.7 9.7Z"/>
+</svg>
+</button>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>('.theme-toggle');
+  if (button) {
+    const toggle = button;
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+    const isDark = () => (document.documentElement.dataset.theme || (systemTheme.matches ? 'dark' : 'light')) === 'dark';
+
+    function updateToggle() {
+      const dark = isDark();
+      const label = dark ? 'Switch to light mode' : 'Switch to dark mode';
+      toggle.dataset.dark = String(dark);
+      toggle.setAttribute('aria-label', label);
+      toggle.title = label;
+    }
+
+    toggle.addEventListener('click', () => {
+      const theme = isDark() ? 'light' : 'dark';
+      document.documentElement.dataset.theme = theme;
+      try { localStorage.setItem('bryanlim-theme', theme); } catch {}
+      updateToggle();
+    });
+    systemTheme.addEventListener('change', updateToggle);
+    updateToggle();
+    toggle.hidden = false;
+  }
+</script>

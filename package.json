@@ -6,9 +6,13 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "preview:variants": "node scripts/preview-variants.mjs"
   },
   "dependencies": {
-    "astro": "^5.13.0"
+    "astro": "^7.3.3"
+  },
+  "engines": {
+    "node": ">=22.12.0"
   }
 }

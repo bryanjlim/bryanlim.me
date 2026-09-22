@@ -2,3 +2,5 @@ node_modules/
 dist/
 preview.html
 preview-projects.html
+.astro/
+.astro-dev*.log
