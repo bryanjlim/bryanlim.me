@@ -1,0 +1,17 @@
+# Long-lived caching for hashed build assets (Astro emits content-hashed filenames under /_astro)
+ /_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images are not content-hashed; cache briefly so updates show up quickly
+/images/*
+  Cache-Control: public, max-age=86400
+
+/avatar.jpg
+  Cache-Control: public, max-age=86400
+
+/favicon.svg
+  Cache-Control: public, max-age=86400
+
+# HTML is never cached at the edge; always revalidated
+/*
+  Cache-Control: public, max-age=0, must-revalidate
